@@ -1,0 +1,25 @@
+start
+    // Initialize the constant for conversion
+    set CUBIC_INCHES_PER_CUBIC_FOOT to 1728
+    
+    // Prompt the user for inputs
+    input "Enter the refrigerator model name: "
+    get refrigerator_model_name
+    
+    input "Enter the interior height in inches: "
+    get height
+    
+    input "Enter the interior width in inches: "
+    get width
+    
+    input "Enter the interior depth in inches: "
+    get depth
+    
+    // Calculate the refrigerator capacity in cubic feet
+    compute cubic_inches as height * width * depth
+    compute capacity_cubic_feet as cubic_inches / CUBIC_INCHES_PER_CUBIC_FOOT
+    
+    // Print the refrigerator model name and its capacity in cubic feet
+    print "The refrigerator model", refrigerator_model_name, "has a capacity of", capacity_cubic_feet, "cubic feet."
+    
+end

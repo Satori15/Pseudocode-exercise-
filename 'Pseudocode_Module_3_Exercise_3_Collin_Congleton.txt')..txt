@@ -1,0 +1,28 @@
+start
+    // Initialize variables
+    set accountBalance to 0
+    set overdrawnFee to 0
+    set overdrawnFeePerOccurrence to 5
+    set overdrawnFeeRate to 0.01  // 1% expressed as a decimal
+
+    // Collect input from the user
+    input "Enter the account balance: "
+    get accountBalance
+    
+    input "Enter the number of times the account was overdrawn: "
+    get overdrawnOccurrences
+    
+    // Calculate the fee
+    compute percentageFee as accountBalance * overdrawnFeeRate
+    compute totalOverdrawnFee as overdrawnOccurrences * overdrawnFeePerOccurrence
+    compute totalFee as percentageFee + totalOverdrawnFee
+    
+    // Calculate the new account balance
+    compute newAccountBalance as accountBalance - totalFee
+    
+    // Print the results
+    print "The fee calculated is: ", totalFee
+    print "The new account balance is: ", newAccountBalance
+    print "Thanks for using this program"
+    
+end
